@@ -1,57 +1,57 @@
 Climbing
 
-    Global variable:
-        int ClimbingSpeed
+Global variable:
+    int ClimbingSpeed
 
 
-    Objects:
+Objects:
 
-    Avatar:
-        int HP
-        weapon Weapon
-        int xpos, ypos //determines point of view
-
-
-    Object:
-        enum type
-        int damage
-        boolean isActive
+Avatar:
+    int HP
+    weapon Weapon
+    int xpos, ypos //determines point of view
 
 
-    Obstacles:
-        int xpos, ypos
-        method tickAction()
+Object:
+    enum type
+    int damage
+    boolean isActive
 
 
-    Enemies extends Obstacles:
-        @inherited
-        int xpos, ypos
-        @new members
-        boolean isMoving
-        enum directionMoving 
-        @override
-        method tickAction()
-            attack()
+Obstacles:
+    int xpos, ypos
+    method tickAction()
 
 
-    Components:
-
-    On every tickAction:
-        Background picture, a looping picture that is continous, ypos-=fallingSpeed
-        Obstacles and enemies, ypos+=ClimbingSpeed  
-        enemies.move()
-        if weapon collides, then enemies.ypos-- and enemies.hp--
-        if avatar collides, then backgound.ypos--,avatar.hp--, enemies.ypos++, obstacle.ypos--, ClimbingSpeed--
-        //if weapon.active==true then weapon.continueSwipe(), weapon.active = false
-        avatar.ClimbingSpeed++
-
-
-    Tilt left:
-        then enemies.xpos--, obstacle.xpos--, background.xpos--
+Enemies extends Obstacles:
+    @inherited
+    int xpos, ypos
+    @new members
+    boolean isMoving
+    enum directionMoving 
+    @override
+    method tickAction()
+        attack()
 
 
-    Tilt right:
-         then enemies.xpos++, obsticle.xpos++, background.xpos++
+Components:
+
+On every tickAction:
+    Background picture, a looping picture that is continous, ypos-=fallingSpeed
+    Obstacles and enemies, ypos+=ClimbingSpeed  
+    enemies.move()
+    if weapon collides, then enemies.ypos-- and enemies.hp--
+    if avatar collides, then backgound.ypos--,avatar.hp--, enemies.ypos++, obstacle.ypos--, ClimbingSpeed--
+    //if weapon.active==true then weapon.continueSwipe(), weapon.active = false
+    avatar.ClimbingSpeed++
+
+
+Tilt left:
+    then enemies.xpos--, obstacle.xpos--, background.xpos--
+
+
+Tilt right:
+     then enemies.xpos++, obsticle.xpos++, background.xpos++
 
 
     Tap:
