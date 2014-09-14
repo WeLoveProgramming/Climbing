@@ -62,7 +62,7 @@ Tilt right:
      then enemies.xpos++, obsticle.xpos++, background.xpos++
 
 
-    Tap:
+Tap:
     
          then weapon.active = true, weapon.swipe(int degree)
 
