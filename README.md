@@ -67,7 +67,7 @@ Tap:
          then weapon.active = true, weapon.swipe(int degree)
 
 
-    EventWhenHP==0:
+EventWhenHP==0:
     
         GameOver()
         ScoreOutput()
