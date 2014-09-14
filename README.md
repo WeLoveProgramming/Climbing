@@ -43,7 +43,7 @@ Components:
 
 On every tickAction:
 
-    Background picture, a looping picture that is continuous, ypos-=fallingSpeed
+    Background picture, a looping picture that is continuous, ypos-=ClimbingSpeed
     Obstacles and enemies, ypos+=ClimbingSpeed  
     enemies.move()
     if weapon collides, then enemies.ypos-- and enemies.hp--
