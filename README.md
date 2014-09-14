@@ -1,29 +1,34 @@
 Climbing
 
 Global variable:
-    int ClimbingSpeed
+
+	int ClimbingSpeed
 
 
 Objects:
 
 Avatar:
+
     int HP
     weapon Weapon
     int xpos, ypos //determines point of view
 
 
 Object:
+
     enum type
     int damage
     boolean isActive
 
 
 Obstacles:
+
     int xpos, ypos
     method tickAction()
 
 
 Enemies extends Obstacles:
+
     @inherited
     int xpos, ypos
     @new members
@@ -37,6 +42,7 @@ Enemies extends Obstacles:
 Components:
 
 On every tickAction:
+
     Background picture, a looping picture that is continous, ypos-=fallingSpeed
     Obstacles and enemies, ypos+=ClimbingSpeed  
     enemies.move()
@@ -47,17 +53,21 @@ On every tickAction:
 
 
 Tilt left:
+
     then enemies.xpos--, obstacle.xpos--, background.xpos--
 
 
 Tilt right:
+
      then enemies.xpos++, obsticle.xpos++, background.xpos++
 
 
     Tap:
+    
          then weapon.active = true, weapon.swipe(int degree)
 
 
     EventWhenHP==0:
+    
         GameOver()
         ScoreOutput()
