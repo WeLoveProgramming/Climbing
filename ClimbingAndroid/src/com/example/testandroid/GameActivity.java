@@ -5,7 +5,13 @@ public class GameActivity {
 	protected boolean tickOn;// if clock is on
 	private Clock cClock;
 	private Thread timmer;
-	public GameActivity(){}
+	private static boolean gamerunning= false;
+	public GameActivity(){
+		gamerunning= true;
+	}
+	public static boolean isGameRunning(){
+		return gamerunning;
+	}
 	public boolean gameStart(){
 		if(init()==false)
 		{
@@ -14,18 +20,23 @@ public class GameActivity {
 		gameRun();
 		return true;
 	}
-	private void gameRun(){
+	protected void gameRun(){
 		if(cClock.isActive())// checks if it is active if not start clock
 			timmer.run();
 		//starts or resume the game
 	}
-	private void gamePause(){
+	protected void gamePause(){
 		//pause the game
 		cClock.pause();
 	}
-	private void gameStop(){
+	protected void gameStop(){
+		//used if game is over
 		gamePause();
-		//uses if game is over
+		DisplayResults();
+		gamerunning= false;		
+	}
+	private void DisplayResults(){
+	// display rank and score and maybe a sendscore	
 	}
 	private boolean init(){
 		//the initialization of the game

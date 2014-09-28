@@ -6,7 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends Activity {
-
+	GameActivity game;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -44,6 +44,13 @@ public class MainActivity extends Activity {
 	}
 	private void playgame(){
 		//playgame 
+		if(!GameActivity.isGameRunning()){
+			game= new GameActivity();
+			game.gameStart();
+		}
+		else {
+			game.gameRun();
+		}
 	}
 	private void showcredits(){
 		//display credits
