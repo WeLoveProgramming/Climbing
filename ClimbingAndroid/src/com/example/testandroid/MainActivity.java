@@ -16,11 +16,14 @@ public class MainActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
+		menu.add("Playgame");
+		menu.add("Credits");
 		getMenuInflater().inflate(R.menu.main, menu);
+		
 		return true;
 	}
 	public boolean onButtonClick(MenuItem item){
-		//android.R.id.Txt1="Troll";
+			
 		return true;
 	}
 	@Override
@@ -29,9 +32,22 @@ public class MainActivity extends Activity {
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
+		if(id==0){
+			playgame();
+		}else if(id==1){
+			showcredits();
+		}
 		if (id == R.id.action_settings) {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
 	}
+	private void playgame(){
+		//playgame 
+	}
+	private void showcredits(){
+		//display credits
+	}
+	
+	
 }
