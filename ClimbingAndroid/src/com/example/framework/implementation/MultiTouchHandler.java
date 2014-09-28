@@ -37,7 +37,8 @@ public class MultiTouchHandler implements TouchHandler {
         this.scaleY = scaleY;
     }
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public boolean onTouch(View v, MotionEvent event) {
         synchronized (this) {
             int action = event.getAction() & MotionEvent.ACTION_MASK;

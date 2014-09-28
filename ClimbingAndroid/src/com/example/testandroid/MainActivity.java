@@ -4,13 +4,23 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import com.example.testandroid.R;
+import com.example.framework.implementation.AndroidGame;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AndroidGame  {
 	GameActivity game;
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		Assets.load(this);
+		
+		new SplashLoadingScreen(this);
+	          
 	}
 
 	@Override
@@ -54,6 +64,12 @@ public class MainActivity extends Activity {
 	}
 	private void showcredits(){
 		//display credits
+	}
+
+	@Override
+	public Screen getInitScreen() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	

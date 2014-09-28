@@ -36,10 +36,11 @@ public class GameActivity {
 		gamerunning= false;		
 	}
 	private void DisplayResults(){
-	// display rank and score and maybe a sendscore	
+	// display rank and score and maybe a send score	
 	}
 	private boolean init(){
 		//the initialization of the game
+		
 		cClock= new Clock();
 		timmer= new Thread(cClock);
 		return true;
@@ -47,27 +48,27 @@ public class GameActivity {
 	public void tick(){
 		//action of each tick
 	}
-	public class Clock extends Thread {
+	public class Clock extends Thread {// the Clock
 		public Clock(){
 			//empty constructor
 			
 		}
-		private boolean stop;
-		public boolean isActive(){
+		private boolean stop;// boolean sets to true when the clock stop
+		public boolean isActive(){//return if it clock is ticking
 			return stop;
 		}
-		public void pause(){
+		public void pause(){// sets the stop to true
 			stop= true;
 		}
-		public void run(){
-			stop= false;
-			while (stop!=true){
+		public void run(){// run the clock
+			stop= false;// sets stop to true
+			while (stop!=true){// loop exits when sets to true
 				try{
-					if(System.currentTimeMillis()%tickClock==0){
-						tick();
-						Thread.sleep(tickClock-System.currentTimeMillis()%tickClock-1);
-					}
-				}catch(InterruptedException e){
+					
+						tick();// calls a tick
+						Thread.sleep(System.currentTimeMillis()%tickClock);// sleeps the tick interval 
+					
+				}catch(InterruptedException e){// in case of an interrupt exception
 					
 				}
 				
